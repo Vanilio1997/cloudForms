@@ -1,0 +1,11 @@
+.avatar{
+   border-radius: 50%;
+   background-color:#D5E4F7;
+   color:#212830;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 40px;
+   line-height: 52px;
+   font-family: SB Sans Text;
+}

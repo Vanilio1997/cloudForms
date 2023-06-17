@@ -1,0 +1,17 @@
+.mainHeader{
+   display: flex;
+   gap: 24px;
+   font-family: SB Sans Interface;
+}
+
+.userInfoContainer{
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   padding: 13px 0;
+}
+
+.linkContainer{
+   display: flex;
+   gap: 17.6px;
+}

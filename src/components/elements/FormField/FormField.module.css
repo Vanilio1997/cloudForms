@@ -1,0 +1,26 @@
+.labelFormField{
+   font-family: 'SB Sans Interface';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 20px;
+   display: flex;
+   align-items: center;
+   color: #333333;
+}
+
+.errorFormField{
+   font-style: normal;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 16px;
+   display: flex;
+   align-items: center;
+   color: rgba(0, 0, 0, 0.48);
+}
+
+.formField{
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}

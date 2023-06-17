@@ -1,0 +1,18 @@
+.button{
+   border-radius: 4px;
+   height: 44px;
+   padding: 12px 16px;
+   outline: none;
+}
+
+.blueBtn{
+   background-color: #5558FA;
+   color: #fff;
+   border: none;
+}
+
+.whiteBtn{
+   background-color: #fff;
+   border:1.5px solid #5558FA;
+   color: #5558FA;
+}
