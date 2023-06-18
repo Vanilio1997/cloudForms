@@ -20,18 +20,12 @@ export const InputTel =forwardRef(({className,inputName,placeholder,register,typ
         return value.replace(PATTERN, '');
     };
 
-    const handlePhoneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handlePhoneInput = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         let inputNumbersValue = getInputNumbersValue(input.value);
         let formattedInputValue = '';
-        const selectionStart = input.selectionStart;
-
         if (!inputNumbersValue) {
             return (input.value = '');
-        }
-
-        if (input.value.length !== selectionStart) {
-            return;
         }
 
         if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
@@ -40,7 +34,6 @@ export const InputTel =forwardRef(({className,inputName,placeholder,register,typ
             }
 
             formattedInputValue = '+7 ';
-
             if (inputNumbersValue.length > 1) {
                 formattedInputValue += ' ' + inputNumbersValue.substring(1, 4);
             }

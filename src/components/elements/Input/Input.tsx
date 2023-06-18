@@ -21,8 +21,8 @@ ref:ForwardedRef<HTMLInputElement>):JSX.Element => {
             <input
                 placeholder={placeholder}
                 ref={ref}
-                onChange={change}
-                className={s[className]}
+                onInput={change}
+                className={`${s[className]} ${s.input} `}
                 {...(register ? register(inputName) : register)}
                 name={inputName}
                 type={type}

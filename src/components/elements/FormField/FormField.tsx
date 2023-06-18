@@ -1,10 +1,12 @@
 import React from 'react';
 import s from './FormField.module.css';
 import Input from '../Input';
+import Select from '../Select';
+import TextArea from '../TextArea';
 import { InputTel } from '../InputTel/InputTel';
 import { IFormField } from '../../../types';
 
-export const FormField = <T,>({type,label,id, change,placeholder,value,className,error,register,name}:IFormField<T>) => {
+export const FormField = <T,>({type,label,id, change,placeholder,value,className,error,register,name,data}:IFormField<T>) => {
     return (
         <div className={s.formField}>
             <label className={s.labelFormField} htmlFor={id}>
@@ -37,6 +39,34 @@ export const FormField = <T,>({type,label,id, change,placeholder,value,className
                             id={id}
                             inputName={name}
                             className={className}
+                        />
+                    </>
+                )
+            }
+            {
+                type === 'select' && (
+                    <>
+                        <Select
+                            register={register}
+                            placeholder={placeholder}
+                            value={value}
+                            data={data}
+                            id={id}
+                            inputName={name}
+                            className={className}
+                        />
+                    </>
+                )
+            }
+            {
+                type === 'textarea' && (
+                    <>
+                        <TextArea
+                            register={register}
+                            placeholder={placeholder}
+                            value={value}
+                            id={id}
+                            inputName={name}
                         />
                     </>
                 )

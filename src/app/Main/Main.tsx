@@ -1,9 +1,8 @@
-import React from 'react';
-import MainHeader from 'components/MainHeader';
+import MainHeader from '../../components/MainHeader';
 import Divider from '../../components/elements/Divider';
 import { MainInputContainer } from '../../containers/main/MainInputContainer';
 import fileLog from  '../../assests/file.png';
-import { getFirstLatters } from 'utilits/utilits';
+import { getFirstLatters } from '../../utilits/utilits';
 import { ILinksArr } from '../../types';
 import { MainPageLayout } from '../../components/layouts/MainPageLayout/MainPageLayout';
 

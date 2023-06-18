@@ -1,0 +1,94 @@
+.form{
+   font-size: 14px;
+   line-height: 20px;
+}
+
+.iconbtn{
+   border: none;
+   background-color: inherit;
+   cursor: pointer;
+}
+
+.input{
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 12px;
+   gap: 12px;
+   width: 300px;
+   height: 44px;
+   background: #FFFFFF;
+   border: 1px solid rgba(0, 0, 0, 0.16);
+   border-radius: 4px;
+
+}
+
+.advantagesContainer{
+   display: flex;
+   flex-direction: column;
+   gap:8px;
+}
+
+.advanatageContainer{
+   display: flex;
+   justify-content: space-between;  
+}
+
+.crossBtn{
+   background-color: inherit;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 12px;
+   gap: 8px;
+   width: 44px;
+   height: 44px;
+   border: 1.5px solid #5558FA;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.checkBoxesContainer{
+   display: flex;
+   flex-direction: column;
+}
+
+.checkboxContainer{
+   height: 20px;
+   width: 20px;
+   padding: 2px;
+}
+
+.checkboxInfoContainer{
+   display: flex;
+   gap: 8px;
+   align-items: center;
+}
+
+.checkbox{
+ width: 16px;
+ height: 16px;
+}
+
+.groupHeader{
+   font-size: 14px;
+}
+
+.radioInfoContainer{
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.radioBtnContainer{
+   width: 20px;
+   height: 20px;
+}
+
+.radioBtn{
+   width: 16px;
+   height: 16px;
+}

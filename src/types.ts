@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { Path,UseFormRegister } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 
 export interface ILinksArr {
    link: string
@@ -7,7 +7,7 @@ export interface ILinksArr {
    text: string
 }
 
-export type FormFieldType = 'text' | 'tel' | 'textarea';
+export type FormFieldType = 'text' | 'tel' | 'textarea' | 'select';
 
 export interface IFormField<T> {
    label?:string
@@ -20,6 +20,28 @@ export interface IFormField<T> {
    className: string
    change?: (e: ChangeEvent<HTMLInputElement>)=>void
    register: UseFormRegister<any>
-   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+   data?: any
+}
+
+export interface IFirstForm{
+   nickName: string
+   name: string
+   surname: string
+   sex: string
+};
+
+export interface IGroupBoolean {
+   value: boolean
+   id: string
+}
+
+
+export interface ISecondForm{
+   advantages: any
+   checkbox: null | string[]
+   radio: string
+}
+
+export interface IThirdForm{
+   about: string
 }

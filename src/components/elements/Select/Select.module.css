@@ -1,0 +1,17 @@
+.select{
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 12px;
+   gap: 12px;
+   width: 100%;
+   height: 44px;
+   background: #FFFFFF;
+   border: 1px solid rgba(0, 0, 0, 0.16);
+   border-radius: 4px;
+   appearance: none;
+   background: url('../../../assests/arrow.png') no-repeat right; 
+   background-position-x: calc(100% - 16px)
+}

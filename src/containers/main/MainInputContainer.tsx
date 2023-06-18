@@ -1,4 +1,3 @@
-import React, {useState,useEffect} from 'react';
 import Button from '../../components/elements/Button';
 import FormField from '../../components/elements/FormField';
 import FormLayout from '../../components/layouts/FormLayout';
@@ -35,6 +34,7 @@ export const MainInputContainer = () => {
 
 
     const onSubmit = (data:any , e:any) =>{
+        console.log(data);
         e.preventDefault();
         navigate('/create');
     };
@@ -63,7 +63,6 @@ export const MainInputContainer = () => {
                     />
                 </FormLayout>
                 <Button
-                    width="79px"
                     type="submit"
                     id="button-start"
                     text="Начать"

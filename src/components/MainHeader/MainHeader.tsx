@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from 'components/elements/Avatar';
+import Avatar from '../elements/Avatar';
 import Link from '../elements/Link';
 import { ILinksArr } from '../../types';
 import s from './MainHeader.module.css';

@@ -9,7 +9,7 @@ interface IFormLayoutProps{
 
 const FormLayout = ({children,marginBottom, width}:IFormLayoutProps) => {
     return (
-        <div className={s.formLayout} style={{'marginBottom': marginBottom, width: width}}>
+        <div className={s.formLayout} style={{'marginBottom': marginBottom, maxWidth: width}}>
             {children}
         </div>
     );

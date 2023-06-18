@@ -1,35 +1,42 @@
 import React from 'react';
 import s from './Button.module.css';
+import Icon from '../Icon';
 
 
-type ButtonType = 'reset' | 'submit' | 'reset';
+type ButtonType = 'reset' | 'submit' | 'button';
 type ButtonClassNameType = 'blueBtn' | 'whiteBtn';
 
 interface IButtonProps{
     text: string
-    width: string
     disabled?: boolean
     click?: (data:any) => void
     type:ButtonType
     id: string
     className: ButtonClassNameType
+    img?: string
+    typeInside?: 'text' | 'picture'
 }
 
 
-const Button = ({click,text,width='', disabled=false, id,className}:IButtonProps) => {
+const Button = ({click,type, text, disabled=false, id,className,typeInside='text',img}:IButtonProps) => {
 
-    const style = {
-        width: width,
-    };
 
     return (
         <button
             id={id}
-            style={style}
             className={`${s.button} ${s[className]}`}
             onClick={click}
             disabled={disabled}
-        >{text}</button>
+            type={type}
+        >
+            {
+                typeInside === 'text'?
+                    <>{text}</>
+                    :
+                    <Icon imageUrl={img} height="12px" weight="12px" />
+            }
+
+        </button>
     );
 };
 

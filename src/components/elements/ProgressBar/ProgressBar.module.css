@@ -1,0 +1,59 @@
+.container{
+   margin-bottom: 100px;
+}
+
+.progressBar{
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   margin: 2rem 0 4rem 0;
+   counter-reset: step;
+}
+
+.progressBar::before, .progress{
+   content: "";
+   position: absolute;
+   top: 20%;
+   transform: translateY(-50%);
+   background: rgba(0, 0, 0, 0.08);
+   height: 8px;
+   width: 100%;
+   border-radius: 8px;
+}
+
+.progress{
+   background-color:  #5558FA;
+   width: 0%;
+   transition: 0.3s ease-in-out;
+}
+
+.steps{
+   width: 16px;
+   height: 16px;
+   background-color:  #A6A6A6;
+   border-radius: 50%;
+   z-index: 3;
+}
+
+.activeSteps{
+   width: 16px;
+   height: 16px;
+   background-color:  #5558FA;
+   border-radius: 50%;
+   z-index: 3;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepContainer{
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+   align-items: center;
+   font-size: 14px;
+}
+
+.item{
+   color: #5558FA;
+}
