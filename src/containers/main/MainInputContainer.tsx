@@ -45,7 +45,7 @@ export const MainInputContainer = () => {
                     <FormField
                         label="Номер Телефона"
                         type="tel"
-                        placeholder=""
+                        placeholder="+7 977 749 27 66"
                         className="mainPageInput"
                         register={register}
                         error={errors.phoneNumber && errors.phoneNumber.message}
@@ -54,7 +54,7 @@ export const MainInputContainer = () => {
                     <FormField
                         label="Email"
                         type="text"
-                        placeholder=""
+                        placeholder="Vlad.rabota.96@yandex.ru"
                         className="mainPageInput"
                         register={register}
                         error={errors.email && errors.email.message}
