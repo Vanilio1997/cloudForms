@@ -34,7 +34,6 @@ export const MainInputContainer = () => {
 
 
     const onSubmit = (data:any , e:any) =>{
-        console.log(data);
         e.preventDefault();
         navigate('/create');
     };

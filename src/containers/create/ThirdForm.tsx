@@ -22,7 +22,6 @@ const schema = yup.object().shape({
         .max(200,'Количество символов не должно быть больше 200'),
 });
 
-
 export const ThirdForm = () => {
     const {
         register,
@@ -34,8 +33,12 @@ export const ThirdForm = () => {
     const about = useAppSelector(state => state.form.thirdForm.about);
     const firstformData = useAppSelector(state => state.form.firstform);
     const secondformData = useAppSelector(state => state.form.secondForm);
-    const postData = {...firstformData, ...secondformData};
+    const [quantity, setQuantity] = useState('');
 
+    function onHandelerArea(e:ChangeEvent<HTMLTextAreaElement>){
+        const input = e.target;
+        setQuantity(input.value);
+    }
     useEffect(()=>{
         setValue('about', about);
     },[]);
@@ -43,18 +46,13 @@ export const ThirdForm = () => {
     const onSubmit = (data:any , e:any) =>{
         e.preventDefault();
         dispatch(setThirdForm(data));
-        // dispatch(postData().then((res:any) => {
-        //     if (res.meta.requestStatus === 'fulfilled') {
-        //       console.log('Отправлено');
-
-        //     if (res.meta.requestStatus === 'rejected') {
-        //       console.log('Ошибка');
-        //     }
-        //   });
-
+        const postValues = {...firstformData, ...secondformData , ...data};
+        dispatch(postData(postValues));
     };
-    function backToPrevPage(){
+
+    function backToPrevPage(data:any){
         dispatch(prevPage());
+        dispatch(setThirdForm(data));
     }
 
     return (
@@ -70,14 +68,16 @@ export const ThirdForm = () => {
                         id="field-about"
                         error={errors.about && errors.about.message}
                         name="about"
+                        change={onHandelerArea}
                     />
+                    <div>{quantity.trim().length}</div>
                 </FormLayout>
                 <BtnsBottomLayout>
                     <Button
                         type="button"
                         id="button-back"
                         text="Назад"
-                        click={backToPrevPage}
+                        click={handleSubmit(backToPrevPage)}
                         className="whiteBtn"
                     />
                     <Button
@@ -92,15 +92,4 @@ export const ThirdForm = () => {
         </div>
     );
 };
-function then(arg0: (res: any) => void): any {
-    throw new Error('Function not implemented.');
-}
-
-function setOpenFulfilleddModal(arg0: boolean) {
-    throw new Error('Function not implemented.');
-}
-
-function setOpenRejectedModal(arg0: boolean) {
-    throw new Error('Function not implemented.');
-}
 

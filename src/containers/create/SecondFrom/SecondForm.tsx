@@ -16,12 +16,12 @@ export const SecondForm = () => {
     const { register, handleSubmit,unregister,setValue } = useForm();
     const onSubmit = (data:any) => {
         dispatch(setSecondForm(data));
-        // dispatch(nextPage());
-        console.log(data);
+        dispatch(nextPage());
     };
 
-    function backToPrevPage(){
+    function backToPrevPage(data:any){
         dispatch(prevPage());
+        dispatch(setSecondForm(data));
     }
 
     const dispatch = useAppDispatch();
@@ -29,10 +29,14 @@ export const SecondForm = () => {
     const checkboxes = useAppSelector(state => state.form.checkbox);
     const radioBtns = useAppSelector(state => state.form.radioBtn);
     const {checkbox,radio} = useAppSelector(state => state.form.secondForm);
+    const {secondForm} = useAppSelector(state=> state.form);
 
     useEffect(()=>{
         setValue('checkbox', checkbox);
         setValue('radio', radio);
+        for (const prop in secondForm.advantages) {
+            setValue(`${prop}`, secondForm.advantages[prop]);
+        }
     },[]);
 
     function addAdvantages(e:React.MouseEvent<HTMLElement>){
@@ -58,6 +62,7 @@ export const SecondForm = () => {
                                     <input
                                         {...register(item , { required: true })}
                                         id={item}
+                                        placeholder="Placeholder"
                                         className={s.input}
                                     />
                                     <button
@@ -121,7 +126,7 @@ export const SecondForm = () => {
                         type="button"
                         id="button-back"
                         text="Назад"
-                        click={backToPrevPage}
+                        click={handleSubmit(backToPrevPage)}
                         className="whiteBtn"
                     />
                     <Button

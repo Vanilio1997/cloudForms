@@ -9,7 +9,6 @@ import { useAppSelector } from '../../hooks';
 export const Create = () => {
 
     const currentPage = useAppSelector(state => state.page.currentPage);
-    console.log(currentPage);
     return (
         <FormPageLayout>
             <ProgressBar  length={3}/>

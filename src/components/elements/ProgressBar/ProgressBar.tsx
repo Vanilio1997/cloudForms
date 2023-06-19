@@ -3,7 +3,8 @@ import s from './ProgressBar.module.css';
 import Icon from '../Icon';
 import mark from '../../../assests/mark.png';
 import dot from '../../../assests/dot.png';
-import { useAppSelector } from '../../../hooks';
+import { useAppSelector,useAppDispatch } from '../../../hooks';
+import { setPage } from '../../../redux/pageSlice';
 
 interface IProgressBar {
    length: number
@@ -12,7 +13,7 @@ interface IProgressBar {
 export const ProgressBar = ({length}:IProgressBar) => {
 
     const arr = [];
-
+    const dispatch = useAppDispatch();
     const currentPage = useAppSelector(state => state.page.currentPage);
 
     for(let i =1 ; i<= length; i++){
@@ -26,7 +27,7 @@ export const ProgressBar = ({length}:IProgressBar) => {
                 <div className={s.progress} style={{width:`${customWidth}%` }} ></div>
                 {
                     arr.map(item =>(
-                        <div className={s.stepContainer}>
+                        <div className={s.stepContainer} onClick={()=> dispatch(setPage(item))}>
                             <div className={currentPage >= item ? s.activeSteps : s.steps}>
                                 {
                                     currentPage > item && <Icon height="8px" weight="9.6px" imageUrl={mark} />

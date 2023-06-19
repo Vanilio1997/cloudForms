@@ -50,7 +50,7 @@ export const FirstForm = () => {
         setValue
     } = useForm<IFirstForm>({ resolver: yupResolver(schema) });
     const store = useAppSelector(store => store);
-    const {name,nickName,sex,surname} = useAppSelector(store => store.form.firstform);
+    const {name,nickname,sex,surname} = useAppSelector(store => store.form.firstform);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
@@ -68,7 +68,7 @@ export const FirstForm = () => {
 
     useEffect(()=>{
         setValue('name', name);
-        setValue('nickname', nickName);
+        setValue('nickname', nickname);
         setValue('sex', sex);
         setValue('surname', surname);
     },[]);
@@ -90,7 +90,7 @@ export const FirstForm = () => {
     }
 
     const onSubmit = (data:any , e:any) => {
-         e.preventDefault();
+        e.preventDefault();
         dispatch(setFirstForm(data));
         dispatch(nextPage());
     };

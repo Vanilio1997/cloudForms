@@ -18,16 +18,22 @@ const pageSlice = createSlice({
         nextPage(state){
             if(state.currentPage < 3){
                 state.currentPage+= 1;
+                state.maxOpenPage+=1;
             }
         },
         prevPage(state){
             if(state.currentPage > 1){
                 state.currentPage-= 1;
             }
+        },
+        setPage(state, action:PayloadAction<number>){
+            if(action.payload <= state.maxOpenPage){
+                state.currentPage =action.payload;
+            }
         }
     }
 });
 
-export const { nextPage,prevPage} = pageSlice.actions;
+export const { nextPage,prevPage,setPage} = pageSlice.actions;
 
 export default pageSlice;

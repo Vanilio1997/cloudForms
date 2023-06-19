@@ -13,5 +13,8 @@
    border-radius: 4px;
    appearance: none;
    background: url('../../../assests/arrow.png') no-repeat right; 
-   background-position-x: calc(100% - 16px)
+   background-position-x: calc(100% - 16px);
+   color: rgba(0, 0, 0, 0.48);
+   font-family: SB Sans Interface;
+   outline: none;
 }

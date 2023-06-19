@@ -18,13 +18,13 @@ export interface IFormField<T> {
    value?: string
    error?: string
    className: string
-   change?: (e: ChangeEvent<HTMLInputElement>)=>void
+   change?: (e:any)=>void
    register: UseFormRegister<any>
    data?: any
 }
 
 export interface IFirstForm{
-   nickName: string
+   nickname: string
    name: string
    surname: string
    sex: string
@@ -44,4 +44,9 @@ export interface ISecondForm{
 
 export interface IThirdForm{
    about: string
+}
+
+export interface IPostInfo{
+   isSend: boolean
+   successfully:boolean
 }

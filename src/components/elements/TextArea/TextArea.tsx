@@ -16,6 +16,7 @@ export const TextArea = forwardRef(({ change, placeholder,  type, id,inputName,r
         <textarea
             placeholder={placeholder}
             onInput={change}
+            onChange={change}
             className={s.textArea}
             {...(register ? register(inputName) : register)}
             name={inputName}
