@@ -33,11 +33,13 @@ export const ThirdForm = () => {
     const about = useAppSelector(state => state.form.thirdForm.about);
     const firstformData = useAppSelector(state => state.form.firstform);
     const secondformData = useAppSelector(state => state.form.secondForm);
-    const [quantity, setQuantity] = useState('');
+    const [quantity, setQuantity] = useState(0);
 
     function onHandelerArea(e:ChangeEvent<HTMLTextAreaElement>){
         const input = e.target;
-        setQuantity(input.value);
+        let text:any = input.value.split(' ');
+        text = text.join('');
+        setQuantity(text.length);
     }
     useEffect(()=>{
         setValue('about', about);
@@ -70,7 +72,7 @@ export const ThirdForm = () => {
                         name="about"
                         change={onHandelerArea}
                     />
-                    <div>{quantity.trim().length}</div>
+                    <div>{quantity}</div>
                 </FormLayout>
                 <BtnsBottomLayout>
                     <Button

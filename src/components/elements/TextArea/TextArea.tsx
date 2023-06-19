@@ -11,12 +11,11 @@ interface ITextAreaProps extends DetailedHTMLProps<HTMLAttributes<HTMLTextAreaEl
    change?: (e: ChangeEvent<HTMLTextAreaElement>)=>void
 }
 
-export const TextArea = forwardRef(({ change, placeholder,  type, id,inputName,register}:ITextAreaProps):JSX.Element => {
+export const TextArea = (({ change, placeholder,  type, id,inputName,register}:ITextAreaProps):JSX.Element => {
     return (
         <textarea
             placeholder={placeholder}
             onInput={change}
-            onChange={change}
             className={s.textArea}
             {...(register ? register(inputName) : register)}
             name={inputName}

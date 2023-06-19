@@ -67,6 +67,7 @@ export const FormField = <T,>({type,label,id, change,placeholder,value,className
                             value={value}
                             id={id}
                             inputName={name}
+                            change={change}
                         />
                     </>
                 )
