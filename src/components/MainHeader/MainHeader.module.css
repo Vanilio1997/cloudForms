@@ -15,3 +15,9 @@
    display: flex;
    gap: 17.6px;
 }
+
+@media (max-width:500px) {
+   .mainHeader{
+      flex-direction: column;
+   }
+}

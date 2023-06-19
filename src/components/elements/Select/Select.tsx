@@ -24,8 +24,8 @@ export const Select = ({inputName,className,data,placeholder,register,change,id,
             >
                 <option value="" disabled selected hidden>{placeholder}</option>
                 {
-                    arrData.map((item) =>(
-                        <option id={`field-sex-option-${item}`} value={item} className={s.option}>
+                    arrData.map((item,index) =>(
+                        <option id={`field-sex-option-${item}`} key={index} value={item} className={s.option}>
                             {item}
                         </option>
                     ))

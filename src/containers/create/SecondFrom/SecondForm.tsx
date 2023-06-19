@@ -58,7 +58,7 @@ export const SecondForm = () => {
                         <div className={s.groupHeader}>Advantages</div>
                         {
                             advantages.map(item => (
-                                <div className={s.advanatageContainer}>
+                                <div className={s.advanatageContainer} key={item}>
                                     <input
                                         {...register(item , { required: true })}
                                         id={item}
@@ -84,8 +84,8 @@ export const SecondForm = () => {
                     <div className={s.checkBoxesContainer}>
                         <div className={s.groupHeader}>Checkbox group</div>
                         {
-                            checkboxes.map(checkbox => (
-                                <div className={s.checkboxInfoContainer}>
+                            checkboxes.map((checkbox,index) => (
+                                <div className={s.checkboxInfoContainer} key={index}>
                                     <div className={s.checkboxContainer}>
                                         <input
                                             className={s.checkbox}
@@ -104,7 +104,7 @@ export const SecondForm = () => {
                         <div className={s.groupHeader}>Radio group</div>
                         {
                             radioBtns.map((item, index)=> (
-                                <div className={s.radioInfoContainer}>
+                                <div className={s.radioInfoContainer} key={index}>
                                     <div className={s.radioBtnContainer}>
                                         <input
                                             {...register('radio' , {required:true})}

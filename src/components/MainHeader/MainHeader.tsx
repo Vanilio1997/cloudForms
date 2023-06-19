@@ -22,8 +22,8 @@ export const MainHeader = ({shortName,userName,linksArr}:IMainHeaderProps) => {
                 </div>
                 <div className={s.linkContainer}>
                     {
-                        linksArr?.map(({image,link,text}:ILinksArr) => (
-                            <Link link={link} image={image} text={text} />
+                        linksArr?.map(({image,link,text}:ILinksArr, index) => (
+                            <Link link={link} image={image} text={text} key={index}/>
                         ))
                     }
                 </div>

@@ -26,8 +26,8 @@ export const ProgressBar = ({length}:IProgressBar) => {
             <div className={s.progressBar}>
                 <div className={s.progress} style={{width:`${customWidth}%` }} ></div>
                 {
-                    arr.map(item =>(
-                        <div className={s.stepContainer} onClick={()=> dispatch(setPage(item))}>
+                    arr.map((item,index) =>(
+                        <div  key={index} className={s.stepContainer} onClick={()=> dispatch(setPage(item))}>
                             <div className={currentPage >= item ? s.activeSteps : s.steps}>
                                 {
                                     currentPage > item && <Icon height="8px" weight="9.6px" imageUrl={mark} />
